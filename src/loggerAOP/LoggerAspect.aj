@@ -42,12 +42,18 @@ public abstract aspect LoggerAspect {
 		}
 	}
 	
-	// Main AOP implementation - Each class from LoggerAspect should have this
+	
+	/* AOP concepts */
+	
+	// The pointcut below allows reuse of this aspect
     abstract pointcut myClass();
 
+    // Needed pointcuts for any method or constructor
     pointcut myConstructor(): myClass() && execution(new(..));
     pointcut myMethod(): myClass() && execution(* *(..));
 
+    
+    // Default advises
     before(): myConstructor() {
         logStart(thisJoinPointStaticPart.getSignature().toString());
     }

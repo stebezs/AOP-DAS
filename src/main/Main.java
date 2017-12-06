@@ -1,7 +1,12 @@
 package main;
 
-public class Main {
+/* This is a example for LoggerAOP + Timer that uses 
+ * a recursive Merge Sort algorithm for calling and timing
+ * the methods used.
+ */
 
+public class Main {
+	
 	public static void main(String[] args) {
 		MergeSortExample sorter = new MergeSortExample();
 		int [] randomArray1 = sorter.generateRandomArray(100);

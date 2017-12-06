@@ -4,6 +4,8 @@ import main.*;
 
 public aspect Logger extends LoggerAspect{
 	private Timer timer = new Timer();
+	
+	// This is the pointcut for this aspect
 	pointcut myClass(): within(MergeSortExample);
 	
 	// This is used for keeping track of which method have been called
@@ -29,11 +31,15 @@ public aspect Logger extends LoggerAspect{
     }
 	
     
+    // Main call for this aspect
 	public static void main(String[] args) {
         Logger.startStream(System.err);
         Main.main(args);
     }
 	
+	
+	// The methods below are for generating an id for each call.
+	// This is specific for this implementation, you can make your own.
 	private String getBeforeId(String id) {
 		String addId = "";
     	
