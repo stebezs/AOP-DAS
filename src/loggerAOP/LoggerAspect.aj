@@ -38,7 +38,7 @@ public abstract aspect LoggerAspect {
 
 	private static void printSpaces() {
 		for (int counter = 0; counter < callDepth; counter++) {
-			stream.print("	");
+			stream.print(" ");
 		}
 	}
 	
